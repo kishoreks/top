@@ -1,0 +1,94 @@
+<p id="back-top" style="display: block;"><a href="#top"><span></span>Top</a></p>
+
+
+// ########################
+// BACK TO TOP FUNCTION
+// ########################
+
+
+jQuery(document).ready(function(){
+"use strict";
+  // hide #back-top first
+  jQuery("#back-top").hide();
+  
+  // fade in #back-top
+  jQuery(function () {
+    jQuery(window).scroll(function () {
+      if (jQuery(this).scrollTop() > 700) {
+        jQuery('#back-top').fadeIn();
+      } else {
+        jQuery('#back-top').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    jQuery('#back-top a').click(function () {
+      jQuery('body,html').animate({
+        scrollTop: 0
+      }, 500);
+      return false;
+    });
+    
+        // scroll body to 0px on click
+    jQuery('#goto a').click(function () {
+      jQuery('body,html').animate({
+        scrollTop: 600
+      }, 500);
+      return false;
+    });
+    
+    
+    jQuery(".scroll").click(function(event){    
+      event.preventDefault();
+      jQuery('html,body').animate({scrollTop:jQuery(this.hash).offset().top}, 500);
+    });
+    
+    
+    
+    
+    
+  });
+  
+  
+  
+    //conditions to change buttons to active on single page website (index_spw.html)
+  jQuery(function () {
+    jQuery(window).scroll(function () {
+      if (jQuery(this).scrollTop() <= 2900) {
+        jQuery(".chome").addClass("sactive");
+      } else {
+        jQuery(".chome").removeClass("sactive");
+      }
+      
+      if (jQuery(this).scrollTop() >= 2901 && jQuery(this).scrollTop() <= 4300) {
+        jQuery(".cabout").addClass("sactive");
+      } else {
+        jQuery(".cabout").removeClass("sactive");
+      }
+      
+      if (jQuery(this).scrollTop() >= 4301 && jQuery(this).scrollTop() <= 5400) {
+        jQuery(".cportfolio").addClass("sactive");
+      } else {
+        jQuery(".cportfolio").removeClass("sactive");
+      }
+      
+      if (jQuery(this).scrollTop() >= 5501 && jQuery(this).scrollTop() <= 6600) {
+        jQuery(".cpricelist").addClass("sactive");
+      } else {
+        jQuery(".cpricelist").removeClass("sactive");
+      }
+      
+      if (jQuery(this).scrollTop() >= 6601 && jQuery(this).scrollTop() <= 7600) {
+        jQuery(".ccontact").addClass("sactive");
+      } else {
+        jQuery(".ccontact").removeClass("sactive");
+      }
+      
+      
+    });
+  });
+  
+  
+  
+
+});
